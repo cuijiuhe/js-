@@ -40,8 +40,22 @@ class Stack {
 }
 
 const stack = new Stack()
-stack.push(0)
-stack.push(1)
-stack.push(0)
-stack.push(1)
-console.log(stack.toString())
+
+//二进制转10进制
+function decimalTo(decNumber) {
+  let number = decNumber
+  let rem
+  let toStr = ''
+  while(number > 0) {
+    rem = Math.floor(number % 2)
+    stack.push(rem)
+    number = Math.floor(number / 2)
+  }
+
+  while(!stack.isEmpty()) {
+    toStr += stack.pop()
+  }
+  return toStr
+}
+
+decimalTo(10)
